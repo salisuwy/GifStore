@@ -1,4 +1,4 @@
-1§§# GifStore REST API
+# GifStore REST API
 ## Overview
 - This RESTful API is developed in ASP.NET Core and SQLite. 
 - The API allows authenticated users to upload GIF images. 
