@@ -39,9 +39,3 @@ https://user-images.githubusercontent.com/8425466/205523031-4ab9a54a-0300-4d4c-a
 
 ## Changing Filestorage mechanism
 - The IFileManager interface can be implemented. I only provide an implementation for LocalFileManager which saves the files locally. AzureStorage, S3 of Google file storage can be implemented
-
-## Output samples
-### Login
-![image](https://user-images.githubusercontent.com/8425466/201521393-04d55832-6e41-4387-af13-6b9ed95e826d.png)
-### Fetching Items
-![image](https://user-images.githubusercontent.com/8425466/201521439-43d1977b-0775-4e62-9175-dfd78353208b.png)
