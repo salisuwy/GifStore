@@ -1,0 +1,142 @@
+﻿@hostname = localhost
+@port = 5031
+@host = http://{{hostname}}:{{port}}/api
+@contentType = application/json
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjdiYWFhMjQ0LWVjYTMtNGQ5ZS04MTI2LTc4YWEwYjVkMGFmZCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBbm5hbWFyaWUgTWNHbHlubiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InVzZXIxQHRlc3QuY29tIiwiZXhwIjoxNjY4MTA1Mzc3LCJpc3MiOiJnaWZzdG9yZS5jb20iLCJhdWQiOiJnaWZzdG9yZS5jb20ifQ.fTXGvh0H4T2N-LwpZMMe1Pq-aajz0IahPmdwzhtV_yw
+
+# Register
+POST {{host}}/users/register
+Content-Type:{{contentType}}
+
+{
+    "email": "user1@test.com",
+    "fullname": "Earling Haaland",
+    "password": "Password1"
+}
+
+###
+
+# Login
+POST {{host}}/users/login
+Content-Type:{{contentType}}
+
+{
+    "email": "user1@test.com",
+    "password": "Password1"
+}
+
+###
+
+# Update fullname
+PUT {{host}}/users
+Content-Type:{{contentType}}
+Authorization: Bearer {{authToken}}
+
+{
+    "data": "Samuel Tharley"
+}
+
+###
+
+# Update password
+PUT {{host}}/users/password
+Content-Type:{{contentType}}
+Authorization: Bearer {{authToken}}
+
+{
+    "data": "Password1"
+}
+
+###
+
+# Get all items for the user
+GET {{host}}/items?page=1
+Content-Type:{{contentType}}
+Authorization: Bearer {{authToken}}
+
+###
+
+# Get single item
+GET {{host}}/items/0fffe1d7-5ab5-4092-b16c-03362db383f1
+Content-Type:{{contentType}}
+Authorization: Bearer {{authToken}}
+
+###
+
+# Search items
+GET {{host}}/items/search?page=1&keyword=-
+Content-Type:{{contentType}}
+Authorization: Bearer {{authToken}}
+
+###
+
+# Update single item
+PUT {{host}}/items/01150b7c-0612-4da4-9595-8830bfbb4046
+Content-Type:{{contentType}}
+Authorization: Bearer {{authToken}}
+
+{
+    "data": "Hello blue shark"
+}
+
+###
+
+# Delete single item ==> delete associated file
+DELETE {{host}}/items/01150b7c-0612-4da4-9595-8830bfbb4046
+Content-Type:{{contentType}}
+Authorization: Bearer {{authToken}}
+
+###
+
+# tag item
+POST {{host}}/items/tag/0fffe1d7-5ab5-4092-b16c-03362db383f1
+Content-Type:{{contentType}}
+Authorization: Bearer {{authToken}}
+
+{
+    "data": "live-music"
+}
+
+###
+
+# untag item
+DELETE {{host}}/items/tag/0fffe1d7-5ab5-4092-b16c-03362db383f1
+Content-Type:{{contentType}}
+Authorization: Bearer {{authToken}}
+
+{
+    "data": "nature"
+}
+
+###
+
+# share (make) item public
+PUT {{host}}/items/share/0fffe1d7-5ab5-4092-b16c-03362db383f1
+Content-Type:{{contentType}}
+Authorization: Bearer {{authToken}}
+
+{
+    "data": false
+}
+
+
+###
+
+# Upload file
+POST {{host}}/items
+Content-Type: multipart/form-data
+Authorization: Bearer {{authToken}}
+
+{
+    "file": ""
+}
+
+###
+
+# download file
+GET {{host}}/items/files/3549570c2bbeb07dee4b44bf0121bf
+Content-Type:{{contentType}}
+Authorization: Bearer {{authToken}}
+
+
+
