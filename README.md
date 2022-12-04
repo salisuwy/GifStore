@@ -1,12 +1,18 @@
 # GifStore REST API
+
 ## Overview
 - This RESTful API is developed in ASP.NET Core and SQLite. 
 - The API allows authenticated users to upload GIF images. 
 - Uploaded items are by private by default and can only be accessed by the owner. 
 - Owners can change the access of their items to public so that other users can view
 
+## Demo
+
+https://user-images.githubusercontent.com/8425466/205523031-4ab9a54a-0300-4d4c-a59e-2a6686e0610e.mp4
+
+
 ## Frontend
-- The frontend is built in React. The complete code can be found in [GifStore React App](https://github.com/salisuwy/gifstore-react-app)
+- The frontend is built in **React**. The complete code can be found in [GifStore React App](https://github.com/salisuwy/gifstore-react-app)
 
 ## Set Up
 - Clone the repo and execute the project. The database is already seeded with random data and images using **Bogus** faker
