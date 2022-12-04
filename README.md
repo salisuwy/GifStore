@@ -5,6 +5,9 @@
 - Uploaded items are by private by default and can only be accessed by the owner. 
 - Owners can change the access of their items to public so that other users can view
 
+## Frontend
+- The frontend is built in React. The complete code can be found in [GifStore React App](https://github.com/salisuwy/gifstore-react-app)
+
 ## Set Up
 - Clone the repo and execute the project. The database is already seeded with random data and images using **Bogus** faker
 - To easy with the demo, two files are provided
@@ -36,8 +39,3 @@
 ![image](https://user-images.githubusercontent.com/8425466/201521393-04d55832-6e41-4387-af13-6b9ed95e826d.png)
 ### Fetching Items
 ![image](https://user-images.githubusercontent.com/8425466/201521439-43d1977b-0775-4e62-9175-dfd78353208b.png)
-
-
-## Description
-A RESTful API developed in ASP.NET Core and SQLite for uploading and sharing image files
-
